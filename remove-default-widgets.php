@@ -8,7 +8,8 @@ Author URL: http://kovshenin.com
 Version: 1.0
 */
 
-/* Yes, a three liner! */
-remove_action( 'init', 'wp_widgets_init', 1 );
+/* Yes, a four liner! */
+add_action( 'plugins_loaded', 'rdw_remove_action' );
 add_action( 'init', 'rdw_do_widgets_init', 1 );
 function rdw_do_widgets_init() { do_action( 'widgets_init' ); }
+function rdw_remove_action() { remove_action( 'init', 'wp_widgets_init', 1 ); }
